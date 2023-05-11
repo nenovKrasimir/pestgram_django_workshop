@@ -8,5 +8,9 @@ def add_photo(request):
     return render(request=request, template_name='photos/photo-add-page.html')
 
 
-def edit_photo(request):
-    pass
+def details_photo(request, pk):
+    return render(request=request, template_name='photos/photo-details-page.html')
+
+
+def edit_photo(request, pk):
+    return render(request=request, template_name="photos/photo-edit-page.html")

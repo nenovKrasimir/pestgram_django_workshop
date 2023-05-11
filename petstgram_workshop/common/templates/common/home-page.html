@@ -2,8 +2,23 @@
 {% block content %}
 {%  load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% for photo in all_photos %}
+    {% if photo.location %}
+        <span>{{ photo.location }}</span>
+    {% endif %}
 
-
+    {% for pet in photo.tagged_pets.all %}
+        <a href="{% url 'add-pet'%}">
+            <p class="message">
+                <b>{{ pet.name }}</b>
+            </p>
+        </a>
+    {% endfor %}
+    <a href="{% url 'add-photo' %}">
+        <h4 class="details">See details</h4>
+        <h5 class="postTime">{{ photo.date_of_publication }}</h5>
+    </a>
+{% endfor %}
 <!-- Starts Head Section -->
 
 <!-- End Header Section with Navigation Bar -->

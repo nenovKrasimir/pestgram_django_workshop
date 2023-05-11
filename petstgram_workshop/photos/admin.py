@@ -4,7 +4,7 @@ from petstgram_workshop.photos.models import Photo
 
 
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ("id", "data_of_publication", "description", "get_tagged_pets")
+    list_display = ("id", "date_of_publication", "description", "get_tagged_pets")
 
     @staticmethod
     def get_tagged_pets(obj):
